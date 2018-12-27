@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Customer List</h1>
+  {% if customer_list %}
+  <ul>
+    {% for customer in customer_list %}
+      <li>
+        <a href="{{ list.get_absolute_url }}">{{ customer.first_name }}</a> ({{customer.last_name}}) {{customer.street_name }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no...</p>
+  {% endif %}       
+{% endblock %}
